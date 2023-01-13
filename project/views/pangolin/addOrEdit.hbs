@@ -1,0 +1,35 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/pangolin" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{pangolin._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Full Name" value="{{pangolin.fullName}}">
+        <div class="text-danger">
+            {{pangolin.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{pangolin.email}}">
+        <div class="text-danger">
+            {{pangolin.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Rank</label>
+            <br>
+            <select>
+                <option value="{{pangolin.rank}}">Alchemist</option>
+                <option value="{{pangolin.rank}}">Warrior</option>
+                <option value="{{pangolin.rank}}">Wizard</option>
+                <option value="{{pangolin.rank}}">Spy</option>
+                <option value="{{pangolin.rank}}">Enchanter</option>
+            </select>
+            {{!-- <input type="text" class="form-control" name="rank" placeholder="Rank" value="{{pangolin.rank}}"> --}}
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/pangolin/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
